@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install cron
+      apt:
+        name: ['cron']
+        state: latest
+    - name: Start service cron, if not started
+      service:
+        name: cron
+        state: started
+    - name: Set up a test cronjob
+      cron:
+        name: Just write the current date into a log file
+        user: root
+        minute: "2-59/5"
+        job: date > /root/date.log

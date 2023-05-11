@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+
+  # the system on which ansible is installed
+  control-node:
+    build: docker/control-node
+    volumes:
+      - ./ansible:/root/ansible
+    tty: true
+
+  # the system that ansible controls
+  managed-node:
+    build: docker/managed-node
