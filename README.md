@@ -1,5 +1,9 @@
 # ansible-docker-test
 
+This project demonstrates how to use ansible between 2 docker containers.
+
+The first docker container (control-node) acts as the ansible control node and the other docker container (managed-node) is the managed node which is controlled by ansible.
+
 ## start docker containers
 ```
 docker compose up
