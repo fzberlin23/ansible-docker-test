@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y openssh-server python3-apt
+RUN apt-get update && apt-get install -y openssh-server python3-apt cron
 
 RUN mkdir -p /var/run/sshd
 

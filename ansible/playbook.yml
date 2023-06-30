@@ -2,10 +2,6 @@
 - hosts: all
   become: true
   tasks:
-    - name: Install cron
-      apt:
-        name: ['cron']
-        state: latest
     - name: Start service cron, if not started
       service:
         name: cron
