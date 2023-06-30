@@ -23,6 +23,11 @@ ssh root@managed-node
 after that you can exit managed-node.
 
 ## run ansible playbook from control-node
+login into control-node:
+```
+docker compose exec control-node bash
+```
+
 dry run:
 ```
 ansible-playbook --ask-pass --ask-become-pass --inventory inventory.yml --check --diff playbook.yml
